@@ -3,6 +3,9 @@ from fastapi import FastAPI
 import os
 
 from starlette.middleware.cors import CORSMiddleware
+
+import routes
+
 #PKG_NAME = os.path.dirname(os.path.realpath(__file__)).split("/")[-2]
 
 
@@ -17,7 +20,7 @@ def setup_app(fastapi_app: FastAPI) -> FastAPI:
     """
 
     # -- set routers to app.
-    #fastapi_app.include_router(routes.product_recommendation_router)
+    fastapi_app.include_router(routes.llm_prediction_router)
 
 
     fastapi_app.add_middleware(
